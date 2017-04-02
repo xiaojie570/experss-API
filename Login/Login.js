@@ -60,11 +60,12 @@
  *    "status": "1"
  * }
  *
+ *
  */
 
 
 /**
- * @api {post} /users/register 注册判断用户名密码是否正确.
+ * @api {post} /users/registerUser 注册判断用户名密码是否正确.
  * @apiPermission none
  * @apoGroup A
  *
@@ -76,7 +77,7 @@
  *    "password": "2"
  * }
  *
- * @apiSuccess {String} status 返回status值给客户端用于验证（0--> 注册成功；1-->用户名已存在）
+ * @apiSuccess {String} status 返回status值给客户端用于验证（0--> 注册成功；1-->用户名已存在;2--->密码为空）
  * 
  * @apiSuccessExample {json} Success-Response :
  * 0-->注册成功
@@ -89,5 +90,8 @@
  * {
  *    "status": "1"
  * }
- *
+ * 2-->密码为空
+ * {
+ *    "status": "2"
+ * }
  */
