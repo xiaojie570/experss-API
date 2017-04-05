@@ -1,6 +1,87 @@
 define({ "api": [
   {
     "type": "post",
+    "url": "/employee/modifyPassword",
+    "title": "修改密码",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "employee",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>新密码.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "username",
+            "description": "<p>session中的username.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "0-->修改成功\n{\n    \"status\": \"0\"\n}\n\n2-->密码为空\n{\n    \"status\": \"2\"\n}\n\n 3-->新密码与旧密码重复\n {\n     \"status\": \"3\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/employee.js",
+    "groupTitle": "employee",
+    "name": "PostEmployeeModifypassword"
+  },
+  {
+    "type": "post",
+    "url": "/employee/selectByUsername",
+    "title": "查询个人信息",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "employee",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "username",
+            "description": "<p>session中的username.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "0-->查询成功\n{\n  \"employee_name\": \"司机3\",\n  \"telephone\": \"3300817\",\n  \"salary\": null,\n  \"location\": \"辽宁鞍山\",\n  \"position\": \"司机\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/employee.js",
+    "groupTitle": "employee",
+    "name": "PostEmployeeSelectbyusername"
+  },
+  {
+    "type": "post",
     "url": "/employee/selectEmployeePosition",
     "title": "职位类型",
     "permission": [
@@ -100,6 +181,30 @@ define({ "api": [
     "filename": "Login/employee.js",
     "groupTitle": "employee",
     "name": "PostEmployeeUpdatestaffposition"
+  },
+  {
+    "type": "post",
+    "url": "/employee/logout",
+    "title": "注销",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "login_register",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "0-->注销成功\n{\n   \"status\": \"0\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/Login.js",
+    "groupTitle": "login_register",
+    "name": "PostEmployeeLogout"
   },
   {
     "type": "post",
