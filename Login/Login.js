@@ -1,8 +1,8 @@
 
 /**
- * @api {post} /users/login 登录.
+ * @api {post} /users/login 登录
  * @apiPermission none
- * @apoGroup A
+ * @apiGroup login-register
  *
  * @apiParam {String} username 用户名.
  * @apiParam {String} password  密码.
@@ -36,9 +36,9 @@
 
 
 /**
- * @api {post} /users/register_judgeUsername 注册判断用户名是否正确.
+ * @api {post} /users/register_judgeUsername 注册(判断用户名)
  * @apiPermission none
- * @apoGroup A
+ * @apiGroup login-register
  *
  * @apiParam {String} username 用户名.
  * @apiParamExample Request-Example: 以下信息已在数据库内创建，可直接用来认证
@@ -65,9 +65,9 @@
 
 
 /**
- * @api {post} /users/registerUser 注册判断用户名密码是否正确.
+ * @api {post} /users/registerUser 注册
  * @apiPermission none
- * @apoGroup A
+ * @apiGroup login-register
  *
  * @apiParam {String} username 用户名.
  * @apiParam {String} password  密码.
@@ -96,49 +96,3 @@
  * }
  */
 
-
-/**
- * @api {post} /employee/selectEmployeePosition 找出员工职位的类型（不需要输入，直接点选），下来菜单的样式
- * @apiPermission none
- * @apoGroup B
- *
- *
- * @apiSuccessExample {json} Success-Response :
- * [
- * "司机",
- * "会计"
- * ]
- */
-
-
-
-/**
- * @api {post} /employee/updateStaffposition 点击更新提交-->更新职员信息，按照session里的username更新.
- * @apiPermission none
- * @apoGroup B
- *
- * @apiParam {String} employee_name 职员名字.
- * @apiParam {String} telephone  职员电话.
- * @apiParam {String} location  职员住址.
- * @apiParam {String} position  职员职位.
- *
- *
- * @apiSuccess {String} status 返回status值给客户端用于判断（0--> 更新成功；1-->更新失败；2-->更新失败 员工职位不存在）
- * 
- * @apiSuccessExample {json} Success-Response :
- * 0-->更新成功
- * {
- *    "status": "0"
- * }
- *
- * @apiErrorExample {json} Error-Response:
- * 1-->更新失败
- * {
- *    "status": "1"
- * }
- *  2-->更新失败 员工职位不存在
- * {
- *    "status": "2"
- * }
- *
- */
