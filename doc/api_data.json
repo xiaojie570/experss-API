@@ -1,6 +1,259 @@
 [
   {
     "type": "post",
+    "url": "/car/addCar",
+    "title": "增加车辆",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "license_plate",
+            "description": "<p>车牌照.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "position",
+            "description": "<p>员工职位.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "employee_name",
+            "description": "<p>员工姓名.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>返回status值给客户端</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "0-->增加成功\n{\n   \"status\": \"0\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "1-->license_plate(车牌照)为空\n{\n   \"status\": \"1\"\n}\n\n2-->position(职位)为空\n{\n   \"status\": \"2\"\n}\n3-->employee_name(名字)为空\n{\n   \"status\": \"2\"\n}\n4-->职称和名字不匹配\n{\n     \"status\": \"4\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car.js",
+    "groupTitle": "car",
+    "name": "PostCarAddcar"
+  },
+  {
+    "type": "post",
+    "url": "/car/queryAllCar",
+    "title": "查询所有车辆",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "{\n \"status\": \"0\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car.js",
+    "groupTitle": "car",
+    "name": "PostCarQueryallcar"
+  },
+  {
+    "type": "post",
+    "url": "/car/queryOneCar",
+    "title": "查询One",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>车的id.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "{\n    \"id\": 1,\n    \"cti_id\": null,\n    \"license_plate\": \"辽C123456\",\n    \"employee_name\": \"司机2\",\n    \"position\": \"司机\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car.js",
+    "groupTitle": "car",
+    "name": "PostCarQueryonecar"
+  },
+  {
+    "type": "post",
+    "url": "/car/updateOneCarInfo",
+    "title": "更改",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "license_plate",
+            "description": "<p>车牌照.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "employee_name",
+            "description": "<p>员工姓名.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "position",
+            "description": "<p>员工职位.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "0-->更新成功\n{\n   \"status\": \"0\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "2-->车牌照为空\n{\n     \"status\":\"2\"\n}\n\n3-->司机为空\n{\n     \"status\":\"3\"\n}\n\n4-->职位为空\n{\n     \"status\":\"4\"\n}\n\n5-->不可以重复添加（车牌号和司机）\n{\n     \"status\":\"5\"\n}\n\n6-->职位和名字不匹配\n{\n     \"status\":\"6\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car.js",
+    "groupTitle": "car",
+    "name": "PostCarUpdateonecarinfo"
+  },
+  {
+    "type": "post",
+    "url": "/employee/selectEmployee_nameByPosition",
+    "title": "按职位找员工",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "position",
+            "description": "<p>职位.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "\n[\n  \"司机1\",\n \"司机2\",\n  \"司机3\",\n  \"付杰\",\n  \"dapang\"\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car.js",
+    "groupTitle": "car",
+    "name": "PostEmployeeSelectemployee_namebyposition"
+  },
+  {
+    "type": "post",
+    "url": "/employee/selectEmployeePosition",
+    "title": "职位类型",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "\n[\n \"司机\",\n \"会计\"\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car.js",
+    "groupTitle": "car",
+    "name": "PostEmployeeSelectemployeeposition"
+  },
+  {
+    "type": "post",
     "url": "/employee/modifyPassword",
     "title": "修改密码",
     "permission": [
