@@ -96,3 +96,19 @@
  * }
  */
 
+
+
+/**
+ * @api {post} /employee/logout 注销
+ * @apiPermission none
+ * @apiGroup login-register
+ *
+ * @apiSuccessExample {json} Success-Response :
+ * 0-->注销成功
+ * {
+ *    "status": "0"
+ * }
+ *
+ */
+
+

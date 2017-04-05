@@ -43,3 +43,48 @@
  * }
  *
  */
+
+
+/**
+ * @api {post} /employee/modifyPassword 修改密码
+ * @apiPermission none
+ * @apiGroup employee
+ *
+ * @apiParam {String} password 新密码.
+ * @apiParam {String} username session中的username.
+ *
+ *  @apiSuccessExample {json} Success-Response :
+ * 0-->修改成功
+ * {
+ *     "status": "0"
+ * }
+ *
+ * 2-->密码为空
+ * {
+ *     "status": "2"
+ * }
+ *
+ *  3-->新密码与旧密码重复
+ *  {
+ *      "status": "3"
+ *  }
+ */
+
+
+/**
+ * @api {post} /employee/selectByUsername 查询个人信息
+ * @apiPermission none
+ * @apiGroup employee
+ *
+ * @apiParam {String} username session中的username.
+ *
+ *  @apiSuccessExample {json} Success-Response :
+ * 0-->查询成功
+ * {
+ *   "employee_name": "司机3",
+ *   "telephone": "3300817",
+ *   "salary": null,
+ *   "location": "辽宁鞍山",
+ *   "position": "司机"
+ * }
+ */
