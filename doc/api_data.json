@@ -2,12 +2,13 @@
   {
     "type": "post",
     "url": "/employee/selectEmployeePosition",
-    "title": "找出员工职位的类型（不需要输入，直接点选），下来菜单的样式",
+    "title": "职位类型",
     "permission": [
       {
         "name": "none"
       }
     ],
+    "group": "employee",
     "success": {
       "examples": [
         {
@@ -18,20 +19,20 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "Login/Login.js",
-    "group": "D__nodewebpack_api_Login_Login_js",
-    "groupTitle": "D__nodewebpack_api_Login_Login_js",
+    "filename": "Login/employee.js",
+    "groupTitle": "employee",
     "name": "PostEmployeeSelectemployeeposition"
   },
   {
     "type": "post",
     "url": "/employee/updateStaffposition",
-    "title": "点击更新提交-->更新职员信息，按照session里的username更新.",
+    "title": "更新员工信息",
     "permission": [
       {
         "name": "none"
       }
     ],
+    "group": "employee",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -96,20 +97,20 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "Login/Login.js",
-    "group": "D__nodewebpack_api_Login_Login_js",
-    "groupTitle": "D__nodewebpack_api_Login_Login_js",
+    "filename": "Login/employee.js",
+    "groupTitle": "employee",
     "name": "PostEmployeeUpdatestaffposition"
   },
   {
     "type": "post",
     "url": "/users/login",
-    "title": "登录.",
+    "title": "登录",
     "permission": [
       {
         "name": "none"
       }
     ],
+    "group": "login_register",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -168,19 +169,19 @@
     },
     "version": "0.0.0",
     "filename": "Login/Login.js",
-    "group": "D__nodewebpack_api_Login_Login_js",
-    "groupTitle": "D__nodewebpack_api_Login_Login_js",
+    "groupTitle": "login_register",
     "name": "PostUsersLogin"
   },
   {
     "type": "post",
     "url": "/users/register_judgeUsername",
-    "title": "注册判断用户名是否正确.",
+    "title": "注册(判断用户名)",
     "permission": [
       {
         "name": "none"
       }
     ],
+    "group": "login_register",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -232,19 +233,19 @@
     },
     "version": "0.0.0",
     "filename": "Login/Login.js",
-    "group": "D__nodewebpack_api_Login_Login_js",
-    "groupTitle": "D__nodewebpack_api_Login_Login_js",
+    "groupTitle": "login_register",
     "name": "PostUsersRegister_judgeusername"
   },
   {
     "type": "post",
     "url": "/users/registerUser",
-    "title": "注册判断用户名密码是否正确.",
+    "title": "注册",
     "permission": [
       {
         "name": "none"
       }
     ],
+    "group": "login_register",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -303,8 +304,7 @@
     },
     "version": "0.0.0",
     "filename": "Login/Login.js",
-    "group": "D__nodewebpack_api_Login_Login_js",
-    "groupTitle": "D__nodewebpack_api_Login_Login_js",
+    "groupTitle": "login_register",
     "name": "PostUsersRegisteruser"
   }
 ]
