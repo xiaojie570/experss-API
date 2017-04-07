@@ -298,6 +298,30 @@
   },
   {
     "type": "post",
+    "url": "/employee/queryAll",
+    "title": "查询所有员工信息",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "employee",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n       {\n         \"id\": 1,\n         \"employee_name\": \"司机1\",\n         \"telephone\": \"3300817\",\n         \"salary\": null,\n         \"location\": \"辽宁\",\n         \"username\": \"8\",\n         \"position\": \"司机\"\n       },\n       {\n         \"id\": 2,\n         \"employee_name\": \"会计1\",\n         \"telephone\": \"3300817\",\n         \"salary\": null,\n         \"location\": \"辽宁\",\n         \"username\": \"12\",\n         \"position\": \"会计\"\n       }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/employee.js",
+    "groupTitle": "employee",
+    "name": "PostEmployeeQueryall"
+  },
+  {
+    "type": "post",
     "url": "/employee/selectByUsername",
     "title": "查询个人信息",
     "permission": [
@@ -434,6 +458,30 @@
     "filename": "Login/employee.js",
     "groupTitle": "employee",
     "name": "PostEmployeeUpdatestaffposition"
+  },
+  {
+    "type": "post",
+    "url": "/users/queryAll",
+    "title": "查询所有用户名密码",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "employee",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n {\n     \"id\": 1,\n     \"username\": \"1\",\n     \"password\": \"123456\",\n     \"role\": \"1\"\n   },\n   {\n     \"id\": 2,\n     \"username\": \"2\",\n     \"password\": \"2\",\n     \"role\": null\n   },\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/Login.js",
+    "groupTitle": "employee",
+    "name": "PostUsersQueryall"
   },
   {
     "type": "post",
@@ -664,5 +712,29 @@
     "filename": "Login/Login.js",
     "groupTitle": "login_register",
     "name": "PostUsersRegisteruser"
+  },
+  {
+    "type": "post",
+    "url": "/storage_location/queryAll",
+    "title": "所有储位",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "storage",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n {\n \"loc_id\": 1,\n \"size\": 1000,\n \"goods_id\": 1,\n \"surplus_size\": 2870\n},\n{\n \"loc_id\": 2,\n \"size\": 1000,\n \"goods_id\": null,\n \"surplus_size\": 1000\n},\n{\n \"loc_id\": 3,\n \"size\": 100,\n \"goods_id\": null,\n \"surplus_size\": 90\n}\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/storage_lation.js",
+    "groupTitle": "storage",
+    "name": "PostStorage_locationQueryall"
   }
 ]

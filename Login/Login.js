@@ -112,3 +112,26 @@
  */
 
 
+/**
+ * @api {post} /users/queryAll 查询所有用户名密码
+ * @apiPermission none
+ * @apiGroup employee
+ *
+ * @apiSuccessExample {json} Success-Response :
+ * [
+ *  {
+ *      "id": 1,
+ *      "username": "1",
+ *      "password": "123456",
+ *      "role": "1"
+ *    },
+ *    {
+ *      "id": 2,
+ *      "username": "2",
+ *      "password": "2",
+ *      "role": null
+ *    },
+ * ]
+ *
+ */
+

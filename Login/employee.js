@@ -88,3 +88,34 @@
  *   "position": "司机"
  * }
  */
+
+
+
+/**
+ * @api {post} /employee/queryAll 查询所有员工信息
+ * @apiPermission none
+ * @apiGroup employee
+ *
+ *  @apiSuccessExample {json} Success-Response :
+ * [
+ *        {
+ *          "id": 1,
+ *          "employee_name": "司机1",
+ *          "telephone": "3300817",
+ *          "salary": null,
+ *          "location": "辽宁",
+ *          "username": "8",
+ *          "position": "司机"
+ *        },
+ *        {
+ *          "id": 2,
+ *          "employee_name": "会计1",
+ *          "telephone": "3300817",
+ *          "salary": null,
+ *          "location": "辽宁",
+ *          "username": "12",
+ *          "position": "会计"
+ *        }
+ * ]
+ */
+
