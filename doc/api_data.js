@@ -347,7 +347,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "username",
-            "description": "<p>session中的username.</p>"
+            "description": "<p>token中的username.</p>"
           }
         ]
       }
@@ -610,11 +610,68 @@ define({ "api": [
       }
     ],
     "group": "goods_flow",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "goods_id",
+            "description": "<p>货物id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "loc_id",
+            "description": "<p>货物储位id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "car_id",
+            "description": "<p>汽车id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>入库出库类型.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "money",
+            "description": "<p>货物单价.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "count",
+            "description": "<p>货物数量.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "[\n       \"入库\",\n       \"出库\"\n]",
+          "content": "查找所有货物流动信息\n[\n    {\n          \"id\": 15,\n          \"goods_id\": 4,\n          \"loc_id\": null,\n          \"car_id\": 1,\n          \"type\": \"入库\",\n          \"username\": \"3\",\n          \"count\": 5,\n          \"money\": 10\n        },\n       {\n         \"id\": 16,\n         \"goods_id\": 4,\n         \"loc_id\": null,\n         \"car_id\": 1,\n         \"type\": \"入库\",\n         \"username\": \"3\",\n         \"count\": 6,\n         \"money\": 10\n     }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "1-->货物没有储位了，需要创建储位\n{\n     \"status\":\"1\"\n}\n\n2-->没有该货物，需要先创建该货物\n{\n     \"status\":\"2\"\n}\n\n3-->货物数量不足，不能出库\n{\n     \"status\":\"3\"\n}\n\n4-->货物id为空\n{\n     \"status\":\"4\"\n}\n\n5-->车辆不能为空\n{\n     \"status\":\"5\"\n}\n\n6-->货物出入库类型不能为空\n{\n     \"status\":\"6\"\n}\n\n7-->货物数量为空\n{\n     \"status\":\"7\"\n}\n\n8-->货物金额为空\n{\n     \"status\":\"8\"\n}",
           "type": "json"
         }
       ]
@@ -647,6 +704,30 @@ define({ "api": [
     "filename": "Login/goods_flow.js",
     "groupTitle": "goods_flow",
     "name": "PostGoods_flowFlow_typedao"
+  },
+  {
+    "type": "post",
+    "url": "/goods_flow/queryAll",
+    "title": "查找所有货物流动信息",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "goods_flow",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n    {\n          \"id\": 15,\n          \"goods_id\": 4,\n          \"loc_id\": null,\n          \"car_id\": 1,\n          \"type\": \"入库\",\n          \"username\": \"3\",\n          \"count\": 5,\n          \"money\": 10\n        },\n       {\n         \"id\": 16,\n         \"goods_id\": 4,\n         \"loc_id\": null,\n         \"car_id\": 1,\n         \"type\": \"入库\",\n         \"username\": \"3\",\n         \"count\": 6,\n         \"money\": 10\n     }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/goods_flow.js",
+    "groupTitle": "goods_flow",
+    "name": "PostGoods_flowQueryall"
   },
   {
     "type": "post",
@@ -747,7 +828,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/goods_flow/queryOutGoods",
-    "title": "货物入库信息",
+    "title": "货物出库信息",
     "permission": [
       {
         "name": "none"

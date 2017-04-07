@@ -76,7 +76,7 @@
  * @apiPermission none
  * @apiGroup employee
  *
- * @apiParam {String} username session中的username.
+ * @apiParam {String} username token中的username.
  *
  *  @apiSuccessExample {json} Success-Response :
  * 0-->查询成功
