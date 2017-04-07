@@ -117,5 +117,11 @@
  *          "position": "会计"
  *        }
  * ]
+ *
+ *  @apiErrorExample {json} Error-Response:
+ * 1-->更新失败
+ * {
+ *    "status": "1"
+ * }
  */
 
