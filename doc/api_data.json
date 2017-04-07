@@ -298,6 +298,39 @@
   },
   {
     "type": "post",
+    "url": "/employee/queryAll",
+    "title": "查询所有员工信息",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "employee",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n       {\n         \"id\": 1,\n         \"employee_name\": \"司机1\",\n         \"telephone\": \"3300817\",\n         \"salary\": null,\n         \"location\": \"辽宁\",\n         \"username\": \"8\",\n         \"position\": \"司机\"\n       },\n       {\n         \"id\": 2,\n         \"employee_name\": \"会计1\",\n         \"telephone\": \"3300817\",\n         \"salary\": null,\n         \"location\": \"辽宁\",\n         \"username\": \"12\",\n         \"position\": \"会计\"\n       }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "1-->更新失败\n{\n   \"status\": \"1\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/employee.js",
+    "groupTitle": "employee",
+    "name": "PostEmployeeQueryall"
+  },
+  {
+    "type": "post",
     "url": "/employee/selectByUsername",
     "title": "查询个人信息",
     "permission": [
@@ -434,6 +467,306 @@
     "filename": "Login/employee.js",
     "groupTitle": "employee",
     "name": "PostEmployeeUpdatestaffposition"
+  },
+  {
+    "type": "post",
+    "url": "/users/queryAll",
+    "title": "查询所有用户名密码",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "employee",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n {\n     \"id\": 1,\n     \"username\": \"1\",\n     \"password\": \"123456\",\n     \"role\": \"1\"\n   },\n   {\n     \"id\": 2,\n     \"username\": \"2\",\n     \"password\": \"2\",\n     \"role\": null\n   },\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/Login.js",
+    "groupTitle": "employee",
+    "name": "PostUsersQueryall"
+  },
+  {
+    "type": "post",
+    "url": "/goods/addGoods",
+    "title": "增加一个货物",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "goods",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "loc_id",
+            "description": "<p>储位.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "count",
+            "description": "<p>货物数量.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "goods_name",
+            "description": "<p>货物名称.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "显示刚刚增加的货物信息\n[\n   {\n     \"id\": 18,\n     \"loc_id\": 5,\n     \"count\": 10,\n     \"goods_name\": \"大串\"\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "1-->储位没有位置了，需要重新增加一个储位\n{\n  \"status\": \"1\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/goods.js",
+    "groupTitle": "goods",
+    "name": "PostGoodsAddgoods"
+  },
+  {
+    "type": "post",
+    "url": "/goods/queryAll",
+    "title": "查询所有货物",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "goods",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n   {\n     \"id\": 1,\n     \"loc_id\": 1,\n     \"count\": 10,\n     \"goods_name\": \"锡纸金针菇\"\n   },\n   {\n     \"id\": 2,\n     \"loc_id\": 1,\n     \"count\": 10,\n     \"goods_name\": \"锡纸花甲粉\"\n   },\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/goods.js",
+    "groupTitle": "goods",
+    "name": "PostGoodsQueryall"
+  },
+  {
+    "type": "post",
+    "url": "/storage_location/queryNoGoods_id",
+    "title": "查找没有货物的储位",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "goods",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n    {\n     \"loc_id\": 5\n   },\n   {\n     \"loc_id\": 6\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/goods.js",
+    "groupTitle": "goods",
+    "name": "PostStorage_locationQuerynogoods_id"
+  },
+  {
+    "type": "post",
+    "url": "/goods_flow/addGoods_flow",
+    "title": "货物流动",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "goods_flow",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n       \"入库\",\n       \"出库\"\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/goods_flow.js",
+    "groupTitle": "goods_flow",
+    "name": "PostGoods_flowAddgoods_flow"
+  },
+  {
+    "type": "post",
+    "url": "/goods_flow/flow_typeDao",
+    "title": "查找入库出库类型",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "goods_flow",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n       \"入库\",\n       \"出库\"\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/goods_flow.js",
+    "groupTitle": "goods_flow",
+    "name": "PostGoods_flowFlow_typedao"
+  },
+  {
+    "type": "post",
+    "url": "/goods_flow/queryByUsername",
+    "title": "查询自己的入库出库信息",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "goods_flow",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n   {\n     \"id\": 8,\n     \"goods_id\": 3,\n     \"loc_id\": 2,\n     \"car_id\": 1,\n     \"type\": \"入库\",\n     \"username\": \"3\",\n     \"count\": 20,\n     \"money\": 10\n   },\n   {\n     \"id\": 9,\n     \"goods_id\": 3,\n     \"loc_id\": 2,\n     \"car_id\": 1,\n     \"type\": \"出库\",\n     \"username\": \"3\",\n     \"count\": 20,\n     \"money\": 10\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/goods_flow.js",
+    "groupTitle": "goods_flow",
+    "name": "PostGoods_flowQuerybyusername"
+  },
+  {
+    "type": "post",
+    "url": "/goods_flow/queryByUsernameAndIn",
+    "title": "查询自己的入库信息",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "goods_flow",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n   {\n     \"id\": 8,\n     \"goods_id\": 3,\n     \"loc_id\": 2,\n     \"car_id\": 1,\n     \"type\": \"入库\",\n     \"username\": \"3\",\n     \"count\": 20,\n     \"money\": 10\n   },\n   {\n     \"id\": 12,\n     \"goods_id\": 3,\n     \"loc_id\": 2,\n     \"car_id\": 1,\n     \"type\": \"入库\",\n     \"username\": \"3\",\n     \"count\": 5,\n     \"money\": 10\n   },\n   {\n     \"id\": 13,\n     \"goods_id\": 3,\n     \"loc_id\": null,\n     \"car_id\": 1,\n     \"type\": \"入库\",\n*      \"username\": \"3\",\n     \"count\": 5,\n     \"money\": 10\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/goods_flow.js",
+    "groupTitle": "goods_flow",
+    "name": "PostGoods_flowQuerybyusernameandin"
+  },
+  {
+    "type": "post",
+    "url": "/goods_flow/queryByUsernameAndOut",
+    "title": "查询自己的出库信息",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "goods_flow",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n   {\n     \"id\": 9,\n     \"goods_id\": 3,\n     \"loc_id\": 2,\n     \"car_id\": 1,\n     \"type\": \"出库\",\n     \"username\": \"3\",\n     \"count\": 20,\n     \"money\": 10\n   },\n   {\n     \"id\": 10,\n     \"goods_id\": 3,\n     \"loc_id\": 2,\n     \"car_id\": 1,\n     \"type\": \"出库\",\n     \"username\": \"3\",\n     \"count\": 2,\n     \"money\": 10\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/goods_flow.js",
+    "groupTitle": "goods_flow",
+    "name": "PostGoods_flowQuerybyusernameandout"
+  },
+  {
+    "type": "post",
+    "url": "/goods_flow/queryInGoods",
+    "title": "货物入库信息",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "goods_flow",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n   {\n     \"id\": 1,\n     \"goods_id\": 1,\n     \"loc_id\": 1,\n     \"car_id\": 1,\n     \"type\": \"入库\",\n     \"username\": \"1\",\n     \"count\": null,\n     \"money\": null\n   },\n   {\n     \"id\": 3,\n     \"goods_id\": 1,\n     \"loc_id\": 1,\n     \"car_id\": 1,\n     \"type\": \"入库\",\n     \"username\": \"1\",\n     \"count\": 10,\n     \"money\": 10\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/goods_flow.js",
+    "groupTitle": "goods_flow",
+    "name": "PostGoods_flowQueryingoods"
+  },
+  {
+    "type": "post",
+    "url": "/goods_flow/queryOutGoods",
+    "title": "货物入库信息",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "goods_flow",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n   {\n     \"id\": 9,\n     \"goods_id\": 3,\n     \"loc_id\": 2,\n     \"car_id\": 1,\n     \"type\": \"出库\",\n     \"username\": \"3\",\n     \"count\": 20,\n     \"money\": 10\n   },\n   {\n     \"id\": 10,\n     \"goods_id\": 3,\n     \"loc_id\": 2,\n     \"car_id\": 1,\n     \"type\": \"出库\",\n     \"username\": \"3\",\n     \"count\": 2,\n     \"money\": 10\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/goods_flow.js",
+    "groupTitle": "goods_flow",
+    "name": "PostGoods_flowQueryoutgoods"
   },
   {
     "type": "post",
@@ -664,5 +997,147 @@
     "filename": "Login/Login.js",
     "groupTitle": "login_register",
     "name": "PostUsersRegisteruser"
+  },
+  {
+    "type": "post",
+    "url": "/storage_location/addOne",
+    "title": "增加一个储位",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "storage",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "size",
+            "description": "<p>储位大小.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "增加成功，返回所有储位记录\n[\n {\n \"loc_id\": 1,\n \"size\": 1000,\n \"goods_id\": 1,\n \"surplus_size\": 2870\n},\n{\n \"loc_id\": 2,\n \"size\": 1000,\n \"goods_id\": null,\n \"surplus_size\": 1000\n},\n{\n \"loc_id\": 3,\n \"size\": 100,\n \"goods_id\": null,\n \"surplus_size\": 90\n}\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/storage_lation.js",
+    "groupTitle": "storage",
+    "name": "PostStorage_locationAddone"
+  },
+  {
+    "type": "post",
+    "url": "/storage_location/queryAll",
+    "title": "所有储位",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "storage",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n {\n \"loc_id\": 1,\n \"size\": 1000,\n \"goods_id\": 1,\n \"surplus_size\": 2870\n},\n{\n \"loc_id\": 2,\n \"size\": 1000,\n \"goods_id\": null,\n \"surplus_size\": 1000\n},\n{\n \"loc_id\": 3,\n \"size\": 100,\n \"goods_id\": null,\n \"surplus_size\": 90\n}\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/storage_lation.js",
+    "groupTitle": "storage",
+    "name": "PostStorage_locationQueryall"
+  },
+  {
+    "type": "post",
+    "url": "/storage_location/queryOnestorage_locationbyId",
+    "title": "查询一个储位",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "storage",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "loc_id",
+            "description": "<p>储位id.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n  {\n    \"loc_id\": 1,\n     \"size\": 1000,\n     \"goods_id\": 1,\n     \"surplus_size\": 2870\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/storage_lation.js",
+    "groupTitle": "storage",
+    "name": "PostStorage_locationQueryonestorage_locationbyid"
+  },
+  {
+    "type": "post",
+    "url": "/storage_location/updateOnestorage_locationbyId",
+    "title": "更新储位大小",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "storage",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "loc_id",
+            "description": "<p>储位loc_id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "size",
+            "description": "<p>储位大小.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "更新成功，返回所有储位记录\n[\n {\n \"loc_id\": 1,\n \"size\": 1000,\n \"goods_id\": 1,\n \"surplus_size\": 2870\n},\n{\n \"loc_id\": 2,\n \"size\": 1000,\n \"goods_id\": null,\n \"surplus_size\": 1000\n},\n{\n \"loc_id\": 3,\n \"size\": 100,\n \"goods_id\": null,\n \"surplus_size\": 90\n}\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/storage_lation.js",
+    "groupTitle": "storage",
+    "name": "PostStorage_locationUpdateonestorage_locationbyid"
   }
 ]
