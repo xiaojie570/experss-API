@@ -254,6 +254,516 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/car_oil/addOneRecord",
+    "title": "增加一条加油记录",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car_oil",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "license_plate",
+            "description": "<p>车牌照.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "money",
+            "description": "<p>金额.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "显示所有车的加油记录\n [\n       {\n         \"id\": 1,\n         \"car_id\": null,\n         \"license_plate\": \"辽C111111\",\n         \"money\": 100,\n         \"year\": \"2017\",\n         \"month\": null,\n         \"day\": \"3\"\n       },\n ]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "1-->车牌照不能为空\n{\n   \"status\": \"1\"\n}\n\n2-->金额不能为空\n{\n   \"status\": \"2\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car_oil.js",
+    "groupTitle": "car_oil",
+    "name": "PostCar_oilAddonerecord"
+  },
+  {
+    "type": "post",
+    "url": "/car_oil/deleteOneRecordByid",
+    "title": "删除一条加油记录",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car_oil",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>加油id.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "显示所有车的加油记录\n [\n       {\n         \"id\": 1,\n         \"car_id\": null,\n         \"license_plate\": \"辽C111111\",\n         \"money\": 100,\n         \"year\": \"2017\",\n         \"month\": null,\n         \"day\": \"3\"\n       },\n ]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car_oil.js",
+    "groupTitle": "car_oil",
+    "name": "PostCar_oilDeleteonerecordbyid"
+  },
+  {
+    "type": "post",
+    "url": "/car_oil/queryAll",
+    "title": "查询所有加油记录",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car_oil",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "显示所有加油记录\n [\n       {\n         \"id\": 1,\n         \"car_id\": null,\n         \"license_plate\": \"辽C111111\",\n         \"money\": 100,\n         \"year\": \"2017\",\n         \"month\": null,\n         \"day\": \"3\"\n       },\n       {\n         \"id\": 2,\n         \"car_id\": null,\n         \"license_plate\": \"辽C123456\",\n         \"money\": 100,\n         \"year\": \"2017\",\n         \"month\": null,\n         \"day\": \"3\"\n       }\n  ]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car_oil.js",
+    "groupTitle": "car_oil",
+    "name": "PostCar_oilQueryall"
+  },
+  {
+    "type": "post",
+    "url": "/car_oil/queryRecordByLicense_plate",
+    "title": "按车牌照查询加油记录",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car_oil",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "license_plate",
+            "description": "<p>车牌号.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "显示一辆车的加油记录\n [\n       {\n         \"id\": 1,\n         \"car_id\": null,\n         \"license_plate\": \"辽C111111\",\n         \"money\": 100,\n         \"year\": \"2017\",\n         \"month\": null,\n         \"day\": \"3\"\n       },\n ]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car_oil.js",
+    "groupTitle": "car_oil",
+    "name": "PostCar_oilQueryrecordbylicense_plate"
+  },
+  {
+    "type": "post",
+    "url": "/car_oil/queryRecordByLicense_plate",
+    "title": "按车牌照查找加油记录",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car_oil",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>加油id.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "\n[\n      {\n        \"id\": 1,\n        \"car_id\": null,\n        \"license_plate\": \"辽C111111\",\n        \"money\": 100,\n        \"year\": \"2017\",\n        \"month\": null,\n        \"day\": \"3\"\n      },\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car_oil.js",
+    "groupTitle": "car_oil",
+    "name": "PostCar_oilQueryrecordbylicense_plate"
+  },
+  {
+    "type": "post",
+    "url": "/car_oil/updateOneRecordByid",
+    "title": "按加油id修改加油记录",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car_oil",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>加油id.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "license_plate",
+            "description": "<p>车牌照.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "money",
+            "description": "<p>金额.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "显示所有加油记录\n [\n       {\n         \"id\": 1,\n         \"car_id\": null,\n         \"license_plate\": \"辽C111111\",\n         \"money\": 100,\n         \"year\": \"2017\",\n         \"month\": null,\n         \"day\": \"3\"\n       },\n ]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car_oil.js",
+    "groupTitle": "car_oil",
+    "name": "PostCar_oilUpdateonerecordbyid"
+  },
+  {
+    "type": "post",
+    "url": "/car_repair/addOneRecord",
+    "title": "增加一条维修记录",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car_repair",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "license_plate",
+            "description": "<p>车牌号.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "service_details",
+            "description": "<p>车辆维修细节.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "money",
+            "description": "<p>维修金额.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "显示所有维修记录\n [\n   {\n     \"id\": 5,\n     \"car_id\": null,\n     \"year\": \"2017\",\n     \"month\": \"4\",\n     \"day\": \"7\",\n     \"license_plate\": \"辽C111111\",\n     \"service_details\": \"修轮胎\",\n     \"money\": 100,\n     \"employee_name\": null\n   },\n   {\n     \"id\": 6,\n     \"car_id\": null,\n     \"year\": \"2017\",\n     \"month\": \"4\",\n     \"day\": \"7\",\n     \"license_plate\": \"辽C111111\",\n     \"service_details\": \"修轮胎\",\n     \"money\": 100,\n     \"employee_name\": \"司机4\"\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car_repair.js",
+    "groupTitle": "car_repair",
+    "name": "PostCar_repairAddonerecord"
+  },
+  {
+    "type": "post",
+    "url": "/car_repair/deleteOneRecord",
+    "title": "删除一条维修记录",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car_repair",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>记录id.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "显示所有维修记录\n [\n   {\n     \"id\": 5,\n     \"car_id\": null,\n     \"year\": \"2017\",\n     \"month\": \"4\",\n     \"day\": \"7\",\n     \"license_plate\": \"辽C111111\",\n     \"service_details\": \"修轮胎\",\n     \"money\": 100,\n     \"employee_name\": null\n   },\n   {\n     \"id\": 6,\n     \"car_id\": null,\n     \"year\": \"2017\",\n     \"month\": \"4\",\n     \"day\": \"7\",\n     \"license_plate\": \"辽C111111\",\n     \"service_details\": \"修轮胎\",\n     \"money\": 100,\n     \"employee_name\": \"司机4\"\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car_repair.js",
+    "groupTitle": "car_repair",
+    "name": "PostCar_repairDeleteonerecord"
+  },
+  {
+    "type": "post",
+    "url": "/car_repair/queryAll",
+    "title": "查询所有维修记录",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car_repair",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "显示所有维修记录\n [\n   {\n     \"id\": 5,\n     \"car_id\": null,\n     \"year\": \"2017\",\n     \"month\": \"4\",\n     \"day\": \"7\",\n     \"license_plate\": \"辽C111111\",\n     \"service_details\": \"修轮胎\",\n     \"money\": 100,\n     \"employee_name\": null\n   },\n   {\n     \"id\": 6,\n     \"car_id\": null,\n     \"year\": \"2017\",\n     \"month\": \"4\",\n     \"day\": \"7\",\n     \"license_plate\": \"辽C111111\",\n     \"service_details\": \"修轮胎\",\n     \"money\": 100,\n     \"employee_name\": \"司机4\"\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car_repair.js",
+    "groupTitle": "car_repair",
+    "name": "PostCar_repairQueryall"
+  },
+  {
+    "type": "post",
+    "url": "/car_repair/queryByMonth",
+    "title": "查询当月维修记录",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car_repair",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": " [\n   {\n     \"id\": 5,\n     \"car_id\": null,\n     \"year\": \"2017\",\n     \"month\": \"4\",\n     \"day\": \"7\",\n     \"license_plate\": \"辽C111111\",\n     \"service_details\": \"修轮胎\",\n     \"money\": 100,\n     \"employee_name\": null\n   },\n   {\n     \"id\": 6,\n     \"car_id\": null,\n     \"year\": \"2017\",\n     \"month\": \"4\",\n     \"day\": \"7\",\n     \"license_plate\": \"辽C111111\",\n     \"service_details\": \"修轮胎\",\n     \"money\": 100,\n     \"employee_name\": \"司机4\"\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car_repair.js",
+    "groupTitle": "car_repair",
+    "name": "PostCar_repairQuerybymonth"
+  },
+  {
+    "type": "post",
+    "url": "/car_repair/queryByMonthandlicense_plate",
+    "title": "一辆车当月维修记录",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car_repair",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "license_plate",
+            "description": "<p>车牌号.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "\n [\n   {\n     \"id\": 5,\n     \"car_id\": null,\n     \"year\": \"2017\",\n     \"month\": \"4\",\n     \"day\": \"7\",\n     \"license_plate\": \"辽C111111\",\n     \"service_details\": \"修轮胎\",\n     \"money\": 100,\n     \"employee_name\": null\n   },\n   {\n     \"id\": 6,\n     \"car_id\": null,\n     \"year\": \"2017\",\n     \"month\": \"4\",\n     \"day\": \"7\",\n     \"license_plate\": \"辽C111111\",\n     \"service_details\": \"修轮胎\",\n     \"money\": 100,\n     \"employee_name\": \"司机4\"\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car_repair.js",
+    "groupTitle": "car_repair",
+    "name": "PostCar_repairQuerybymonthandlicense_plate"
+  },
+  {
+    "type": "post",
+    "url": "/car_repair/queryByYear",
+    "title": "查询当年维修记录",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car_repair",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n   {\n      \"id\": 2,\n      \"car_id\": null,\n      \"year\": \"2017\",\n      \"month\": \"5\",\n      \"day\": \"7\",\n      \"license_plate\": \"辽C111111\",\n      \"service_details\": \"修轮胎\",\n      \"money\": 100,\n      \"employee_name\": null\n    },\n   {\n     \"id\": 3,\n     \"car_id\": null,\n     \"year\": \"2017\",\n     \"month\": \"6\",\n     \"day\": \"7\",\n     \"license_plate\": \"辽C111111\",\n     \"service_details\": \"修轮胎\",\n     \"money\": 100,\n     \"employee_name\": null\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car_repair.js",
+    "groupTitle": "car_repair",
+    "name": "PostCar_repairQuerybyyear"
+  },
+  {
+    "type": "post",
+    "url": "/car_repair/queryByYearandlicense_plate",
+    "title": "一辆车当年维修记录",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "car_repair",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "license_plate",
+            "description": "<p>车牌号.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "\n [\n   {\n     \"id\": 5,\n     \"car_id\": null,\n     \"year\": \"2017\",\n     \"month\": \"4\",\n     \"day\": \"7\",\n     \"license_plate\": \"辽C111111\",\n     \"service_details\": \"修轮胎\",\n     \"money\": 100,\n     \"employee_name\": null\n   },\n   {\n     \"id\": 6,\n     \"car_id\": null,\n     \"year\": \"2017\",\n     \"month\": \"4\",\n     \"day\": \"7\",\n     \"license_plate\": \"辽C111111\",\n     \"service_details\": \"修轮胎\",\n     \"money\": 100,\n     \"employee_name\": \"司机4\"\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/car_repair.js",
+    "groupTitle": "car_repair",
+    "name": "PostCar_repairQuerybyyearandlicense_plate"
+  },
+  {
+    "type": "post",
+    "url": "/employee/addPosition",
+    "title": "增加职位类型",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "employee",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "position",
+            "description": "<p>职位名称.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n   \"司机\",\n   \"会计\",\n   \"卸货员\",\n   \"装载员\"\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/employee.js",
+    "groupTitle": "employee",
+    "name": "PostEmployeeAddposition"
+  },
+  {
+    "type": "post",
     "url": "/employee/modifyPassword",
     "title": "修改密码",
     "permission": [
@@ -368,8 +878,8 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/employee/selectEmployeePosition",
-    "title": "职位类型",
+    "url": "/employee/updatePosition",
+    "title": "更新职位类型",
     "permission": [
       {
         "name": "none"
@@ -380,7 +890,16 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response :",
-          "content": "[\n\"司机\",\n\"会计\"\n]",
+          "content": "[\n    \"司机\",\n    \"会计\",\n    \"卸货员\",\n    \"装货员\"\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "1-->更新失败\n{\n   \"status\": \"1\"\n}\n\n2-->不能更新该职位，因为有该职位的员工\n{\n   \"status\": \"2\"\n}",
           "type": "json"
         }
       ]
@@ -388,7 +907,7 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "Login/employee.js",
     "groupTitle": "employee",
-    "name": "PostEmployeeSelectemployeeposition"
+    "name": "PostEmployeeUpdateposition"
   },
   {
     "type": "post",
