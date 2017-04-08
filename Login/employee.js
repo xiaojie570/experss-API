@@ -1,14 +1,29 @@
 
 /**
- * @api {post} /employee/selectEmployeePosition 职位类型
+ * @api {post} /employee/updatePosition 更新职位类型
  * @apiPermission none
  * @apiGroup employee
  *
  * @apiSuccessExample {json} Success-Response :
  * [
- * "司机",
- * "会计"
+ *     "司机",
+ *     "会计",
+ *     "卸货员",
+ *     "装货员"
  * ]
+ *
+ *
+ * @apiErrorExample {json} Error-Response:
+ * 1-->更新失败
+ * {
+ *    "status": "1"
+ * }
+ *
+ * 2-->不能更新该职位，因为有该职位的员工
+ * {
+ *    "status": "2"
+ * }
+ *
  */
 
 
@@ -125,3 +140,20 @@
  * }
  */
 
+
+
+/**
+ * @api {post} /employee/addPosition 增加职位类型
+ * @apiPermission none
+ * @apiGroup employee
+ *
+ * @apiParam {String} position 职位名称.
+ *
+ *  @apiSuccessExample {json} Success-Response :
+ *[
+ *    "司机",
+ *    "会计",
+ *    "卸货员",
+ *    "装载员"
+ *]
+ */
