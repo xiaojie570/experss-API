@@ -1013,6 +1013,91 @@
   },
   {
     "type": "post",
+    "url": "/employee_salary/queryAll显示所有人的工资",
+    "title": "",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "employee_salary",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n   {\n     \"id\": 1,\n     \"salary\": 2030,\n     \"year\": \"2017\",\n     \"month\": \"4\",\n     \"username\": \"7\",\n     \"employee_name\": \"司机2\",\n     \"money\": 10600\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/employee_salary.js",
+    "groupTitle": "employee_salary",
+    "name": "PostEmployee_salaryQueryall"
+  },
+  {
+    "type": "post",
+    "url": "/employee_salary/selectOneMonthSumMoney",
+    "title": "查找当月总流动金额",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "employee_salary",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "username",
+            "description": "<p>用户名.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n   {\n     \"id\": 28,\n     \"goods_id\": 18,\n     \"loc_id\": 5,\n     \"car_id\": 1,\n     \"type\": \"入库\",\n     \"username\": \"7\",\n     \"count\": 12,\n     \"money\": 50,\n     \"year\": \"2017\",\n     \"month\": \"4\",\n     \"day\": \"2\"\n   },\n   {\n     \"id\": 29,\n     \"goods_id\": 1,\n     \"loc_id\": 1,\n     \"car_id\": 1,\n     \"type\": \"入库\",\n     \"username\": \"7\",\n     \"count\": 100,\n     \"money\": 100,\n     \"year\": \"2017\",\n     \"month\": \"4\",\n     \"day\": \"2\"\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/employee_salary.js",
+    "groupTitle": "employee_salary",
+    "name": "PostEmployee_salarySelectonemonthsummoney"
+  },
+  {
+    "type": "post",
+    "url": "/employee_salary/showSalary",
+    "title": "显示自己的工资",
+    "permission": [
+      {
+        "name": "none"
+      }
+    ],
+    "group": "employee_salary",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response :",
+          "content": "[\n   {\n     \"id\": 1,\n     \"salary\": 2030,\n     \"year\": \"2017\",\n     \"month\": \"4\",\n     \"username\": \"7\",\n     \"employee_name\": \"司机2\",\n     \"money\": 10600\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "Login/employee_salary.js",
+    "groupTitle": "employee_salary",
+    "name": "PostEmployee_salaryShowsalary"
+  },
+  {
+    "type": "post",
     "url": "/goods/addGoods",
     "title": "增加一个货物",
     "permission": [
