@@ -37,7 +37,7 @@
  */
 
 /**
- * @api {post} /employee_salary/queryAll显示所有人的工资
+ * @api {post} /employee_salary/queryAll 显示所有人的工资
  * @apiPermission none
  * @apiGroup employee-salary
  * 

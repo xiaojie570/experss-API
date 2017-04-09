@@ -1013,8 +1013,8 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/employee_salary/queryAll显示所有人的工资",
-    "title": "",
+    "url": "/employee_salary/queryAll",
+    "title": "显示所有人的工资",
     "permission": [
       {
         "name": "none"
